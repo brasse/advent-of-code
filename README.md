@@ -5,3 +5,7 @@
 or
 
 `$ guile solution.scm < input.txt`
+
+or
+
+`$ go run solution.go < input.txt`
