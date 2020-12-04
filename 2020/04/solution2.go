@@ -77,17 +77,19 @@ func validateHeight(s string) bool {
 }
 
 func validateHair(s string) bool {
-    re := regexp.MustCompile(`#[0-9a-f]{6}`)
+    re := regexp.MustCompile(`^#[0-9a-f]{6}$`)
     return re.MatchString(s)
 }
 
 func validateEye(s string) bool {
-    c := map[string]bool{"amb": true, "blu": true, "brn": true, "gry" : true, "grn": true,
-        "hzl": true, "oth": true}
-    return c[s]
+    re := regexp.MustCompile(`^amb|blu|brn|gry|grn|hzl|oth$`)
+    // c := map[string]bool{"amb": true, "blu": true, "brn": true, "gry" : true, "grn": true,
+    //     "hzl": true, "oth": true}
+    // return c[s]
+    return re.MatchString(s)
 }
 
 func validatePid(s string) bool {
-    re := regexp.MustCompile(`[0-9]{9}`)
+    re := regexp.MustCompile(`^[0-9]{9}$`)
     return re.MatchString(s)
 }
